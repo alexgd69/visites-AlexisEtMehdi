@@ -21,7 +21,7 @@ async def metrics_middleware(request: Request, call_next):
     status = "500"
     try:
         response = await call_next(request)
-        response.headers["X-Visites-Version"] = settings.version
+        response.headers["X-Visites-Ver"] = settings.version
         status = str(response.status_code)
         return response
     finally:
